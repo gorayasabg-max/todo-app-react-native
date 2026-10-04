@@ -1,0 +1,12 @@
+require('dotenv').config();
+const express=require('express');
+const cors=require('cors');
+const mongoose=require('mongoose');
+const todoRoutes=require('./routes/todoRoutes');
+const app=express();
+const PORT=process.env.PORT||5000;
+app.use(cors()); app.use(express.json());
+app.get('/api/health',(_req,res)=>res.json({ok:true,message:'Todo API is running'}));
+app.use('/api/todos',todoRoutes);
+app.use((err,_req,res,_next)=>{console.error(err);res.status(500).json({message:'Server error'});});
+(async()=>{try{if(!process.env.MONGO_URI) throw new Error('MONGO_URI is missing in .env'); await mongoose.connect(process.env.MONGO_URI); console.log('MongoDB Connected'); app.listen(PORT,()=>console.log(`API running on http://localhost:${PORT}`));}catch(err){console.error('Startup failed:',err.message);process.exit(1);}})();

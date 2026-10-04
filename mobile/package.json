@@ -1,0 +1,33 @@
+{
+  "name": "todo-mobile",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "android": "react-native run-android",
+    "start": "react-native start",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "@react-native-async-storage/async-storage": "^2.2.0",
+    "axios": "^1.12.2",
+    "nativewind": "4.2.7",
+    "react": "19.1.0",
+    "react-native": "0.82.1",
+    "react-native-reanimated": "^4.1.2",
+    "react-native-safe-area-context": "^5.6.1"
+  },
+  "devDependencies": {
+    "@react-native-community/cli": "^20.0.2",
+    "@react-native/babel-preset": "0.82.1",
+    "@react-native/eslint-config": "0.82.1",
+    "@react-native/metro-config": "0.82.1",
+    "@types/react": "^19.1.13",
+    "babel-plugin-nativewind": "^0.4.2",
+    "prettier": "^3.6.2",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.9.2"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
